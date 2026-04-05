@@ -1,0 +1,160 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #000;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 60px;
+            position: sticky;
+            top: 0;
+            background: black;
+            z-index: 100;
+        }
+        header h2 {color: #ff4c4c;}
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        nav a:hover {color: #ff4c4c;}
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 0 60px;
+            flex-wrap: wrap;
+        }
+        .hero-left {position: relative;}
+        .circle {
+            width: 350px;
+            height: 350px;
+            background: #ff1e1e;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(30px);
+        }
+        .hero-left img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff4c4c;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-right {max-width: 500px;}
+        .hero-right h1 {font-size: 50px;}
+        .hero-right span {color: #ff4c4c;}
+        .hero-right h2 {
+            margin: 10px 0;
+            font-size: 30px;
+        }
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 2px solid #ff4c4c;
+            white-space: nowrap;
+            animation: typing 3s steps(15, end), blink 0.7s infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }to { width: 100% }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .social {margin: 20px 0;}
+        .social a {
+            margin-right: 15px;
+            font-size: 18px;
+            color: white;
+            border: 1px solid #ff4c4c;
+            padding: 10px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .social a:hover {
+            background: #ff4c4c;
+            box-shadow: 0 0 10px #ff4c4c;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border: 1px solid #ff4c4c;
+            border-radius: 25px;
+            color: #ff4c4c;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #ff4c4c;
+            color: white;
+        }
+        section {padding: 80px 60px;}
+        h2 {
+            color: #ff4c4c;
+            margin-bottom: 20px;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px #ff4c4c;
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .skill-box {
+        background: #111;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .skill-box i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #ff4c4c;
+        }
+        .skill-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #ff4c4c;
+        }
+        .contact-box {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .contact-box p {margin: 10px 0;}
+        @media(max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;}
+            header {padding: 15px 20px;}
+            .hero-right h1 {font-size: 35px;}
+        } 

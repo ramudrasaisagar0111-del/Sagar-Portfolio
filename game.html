@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quote Generator</title>
+<style>
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: black;
+}
+header h2 {
+    color: #ff4c4c;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #ff4c4c;
+}
+h1 {
+    color: #ff4c4c;
+    margin-top: 50px;
+}
+button {
+    padding: 10px 20px;
+    border: 1px solid #ff4c4c;
+    background: black;
+    color: #ff4c4c;
+    cursor: pointer;
+}
+button:hover {
+    background: #ff4c4c;
+    color: white;
+}
+#quote {
+    margin: 20px;
+    font-size: 20px;
+}
+</style>
+</head>
+<body>
+<header>
+    <h2>Sagar</h2>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="projects.html">Back</a>
+    </nav>
+</header>
+<h1>💬 Random Quote</h1>
+<p id="quote">Click below</p>
+<button onclick="newQuote()">Generate</button>
+<script>
+let quotes = [
+    "Stay hungry, stay foolish.",
+    "Code never lies.",
+    "Practice makes perfect.",
+    "Dream big.",
+    "Never give up.",
+    "Each morning is an unopened gift — unwrap it with hope.",
+    "Tiny, consistent actions can build bridges to your biggest dreams.",
+    "A kind word can echo longer than a lifetime.",
+    "It’s not how fast you go, it’s how true you stay to your path.",
+    "Rain may fall, but it also nourishes the seeds of tomorrow.",
+    "The strongest trees grow where the winds have been fiercest."
+];
+function newQuote() {
+    let q = quotes[Math.floor(Math.random()*quotes.length)];
+    document.getElementById("quote").innerText = q;
+}
+</script>
+</body>
+</html>

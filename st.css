@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: #000;
+    color: white;
+    overflow-x: hidden;
+    perspective: 1000px;
+}
+@keyframes cubeReveal {
+    from {
+        opacity: 0;
+        transform: rotateX(-30deg) translateY(100px) translateZ(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0deg) translateY(0) translateZ(0);
+    }
+}
+@keyframes float3D {
+    0%, 100% { transform: translateY(0) rotateY(-10deg) rotateX(5deg); }
+    50% { transform: translateY(-20px) rotateY(10deg) rotateX(-5deg); }
+}
+@keyframes pulseGlow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid #1a1a1a;
+}
+header h2 { color: #ff4c4c; }
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav a:hover { color: #ff4c4c; }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    min-height: 100vh;
+    padding: 0 60px;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+}
+.hero-left {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    animation: float3D 5s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+.circle {
+    width: 380px;
+    height: 380px;
+    background: #ff1e1e;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(60px);
+    z-index: 1;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+.hero-left img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ff4c4c;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(255, 76, 76, 0.3);
+}
+.hero-right {
+    max-width: 500px;
+    animation: cubeReveal 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hero-right h1 { font-size: 55px; line-height: 1.1; }
+.hero-right span { color: #ff4c4c; }
+.hero-right h2 { margin: 15px 0; font-size: 32px; }
+.typing {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #ff4c4c;
+    white-space: nowrap;
+    animation: typing 3.5s steps(20, end), blink 0.75s step-end infinite;
+}
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent; } }
+section {
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h2 {
+    color: #ff4c4c;
+    margin-bottom: 40px;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.projects, .skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+}
+.card, .skill-box {
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #222;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s;
+    transform-style: preserve-3d;
+}
+.card:hover, .skill-box:hover {
+    transform: rotateX(10deg) rotateY(-10deg) translateZ(30px);
+    border-color: #ff4c4c;
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(255, 76, 76, 0.2);
+}
+h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #fff;
+    transform: translateZ(20px);
+}
+.skill-box i {
+    font-size: 55px;
+    margin-bottom: 20px;
+    color: #ff4c4c;
+    display: block;
+    transform: translateZ(40px);
+}
+.social a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #ff4c4c;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    transition: 0.4s;
+    background: #0a0a0a;
+}
+.social a:hover {
+    background: #ff4c4c;
+    transform: translateZ(20px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 76, 76, 0.4);
+}
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid #ff4c4c;
+    border-radius: 10px;
+    color: #ff4c4c;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    background: transparent;
+}
+.btn:hover {
+    background: #ff4c4c;
+    color: white;
+    transform: translateY(-5px) translateZ(10px);
+    box-shadow: 0 10px 20px rgba(255, 76, 76, 0.3);
+}
+.contact-box {
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 8px solid #ff4c4c;
+    transform: translateZ(10px);
+}
+.contact-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 320px;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #222;
+    background: #111;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff4c4c;
+    box-shadow: 0 0 10px rgba(255, 76, 76, 0.3);
+}
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4c4c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contact-form button:hover {
+    background: red;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 76, 76, 0.3);
+}
+@media(max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        padding-top: 80px;
+    }
+    header { padding: 15px 25px; }
+    .hero-right h1 { font-size: 40px; }
+    .hero-left, .hero-left img { width: 260px; height: 260px; }
+}
