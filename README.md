@@ -1,0 +1,1 @@
+This repository showcases the source code for my personal portfolio website, where I present my skills, projects, and learning journey as a Computer Science student passionate about web development. It reflects my ability to design and build responsive, user-friendly web applications.
